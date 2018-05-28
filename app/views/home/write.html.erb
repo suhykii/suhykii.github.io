@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RedMoon</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> doo_lee_3@naver.com</a></li>
+							    <% if user_signed_in? %>
+							    <li><a href="/users/sign_out">[로그아웃]</a><li>
+							    <% else %>
+								<li><a href="/users/sign_in">[로그인]</a></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<!--<ul class="nav navbar-nav">-->
+							<!--	<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+							<!--	<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+							<!--	<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+							<!--	<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
+							<!--	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+							<!--</ul>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/main"><img src="images/REDMOON.png" weigh></a>
+						</div>
+							
+					</div>
+				
+			
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/main" class="active">홈</a></li>
+								<li class="dropdown"><a href="/food">식음료<!--<i class="fa fa-angle-down"></i> --></a>
+          <!--                          <ul role="menu" class="sub-menu">-->
+          <!--                              <li><a href="shop.html">Products</a></li>-->
+										<!--<li><a href="product-details.html">Product Details</a></li> -->
+										<!--<li><a href="checkout.html">Checkout</a></li> -->
+										<!--<li><a href="cart.html">Cart</a></li> -->
+										<!--<li><a href="login.html">Login</a></li> -->
+          <!--                          </ul>-->
+                                <!--</li> -->
+								<li class="dropdown"><a href="/living">리빙<!-- <i class="fa fa-angle-down"></i> --></a>
+          <!--                          <ul role="menu" class="sub-menu">-->
+          <!--                              <li><a href="blog.html">Blog List</a></li>-->
+										<!--<li><a href="blog-single.html">Blog Single</a></li>-->
+          <!--                          </ul>-->
+                                <!--</li> -->
+								<li><a href="/fashion">패션 & 뷰티</a></li>
+								<li><a href="/gita">기타</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--<div class="col-sm-3">-->
+					<!--	<div class="search_box pull-right">-->
+					<!--		<input type="text" placeholder="Search"/>-->
+					<!--	</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header--><hr>
+
+<div class="container">
+    <form action="/create" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+      
+      <select class="form-control">
+      <option value = "1">식음료</option>
+      <option value = "2">리빙</option>
+      <option value = "3">패션&뷰티</option>
+      <option value = "4">기타</option>
+        </select>  <br>
+        
+        if select option value ="4"{
+        
+        
+        }
+    
+        <!--제품이름등록 폼-->
+    <h4>제품 이름</h4>
+    <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="정확한 제품명을 적어주세요">
+  </div>
+  <!--제품 내용 입력 폼-->
+  <div class="form-group">
+    <h4>제품 설명</h4>
+    <textarea name="content" class="form-control" id="exampleInputPassword1" rows="10" placeholder="제품의 상태, 거래방법(장소 등) 정확하게 입력해주세요.
+허위 작성시, 삭제될 수 있습니다."></textarea>
+  </div>
+  
+  
+  <!--가격입력창-->
+  
+    <h4>제품 가격</h4>
+	<script type="text/javascript">
+<!--
+//[] <--문자 범위 [^] <--부정 [0-9] <-- 숫자  
+//[0-9] => \d , [^0-9] => \D
+var rgx1 = /\D/g;  // /[^0-9]/g 와 같은 표현
+var rgx2 = /(\d+)(\d{3})/; 
+
+function getNumber(obj){
+	
+     var num01;
+     var num02;
+     num01 = obj.value;
+     num02 = num01.replace(rgx1,"");
+     num01 = setComma(num02);
+     obj.value =  num01;
+
+}
+
+function setComma(inNum){
+     
+     var outNum;
+     outNum = inNum; 
+     while (rgx2.test(outNum)) {
+          outNum = outNum.replace(rgx2, '$1' + ',' + '$2');
+      }
+     return outNum;
+
+}
+//-->
+</script>
+      <input name="pprice" type="text" onchange="getNumber(this);" onkeyup="getNumber(this);" style="text-align:right;">원<hr>
+	
+
+
+
+  <!--이미지파일올리기-->
+ <%= file_field_tag 'file', :accept => 'image/png,image/gif,image/jpeg' %> <br>
+
+<!--제품등록하기버튼-->
+  <button type="submit" class="btn btn-default">제품등록</button>
+  
+
+</form>
+</div>
+
+
+
+<!--<section id="blank">-->
+<!--   <div class="container">-->
+    
+    
+    
+    
+    
+<!--    </div>-->
+<!--    </section>-->
+
+		<div class="footer-bottom">
+			<div class="container">
+				
+			<!--번호/페이스북아이콘 소스 아래부터-->
+					<div class="footer_add"><!--footer_add-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> doo_lee_3@naver.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+				
+				
+				<div class="row">
+					<p class="pull-left">Copyright © 2018 멋쟁이사자처럼6기 All rights reserved.</p>
+					<p class="pull-right">Designed by <span>멋쟁이사자처럼건국대 <img src="images/likelionkku.png"></a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

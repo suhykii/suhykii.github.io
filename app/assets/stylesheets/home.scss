@@ -1,0 +1,38 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// 등록하기버튼css
+.upload{
+    float:right;
+    background :#ffafc8;
+    padding : 10px;
+    margin-right :30px;
+    border-radius: 5px;
+}
+.upload a{
+    color :#fff;
+    font-size:15px;
+}
+
+
+.productinfo2 h3{
+	color: #ffafc8;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.productinfo2 p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #696763;
+}
+
+.productinfo2 img{
+  width: 30%;
+}
+
+#productlist{
+   
+}

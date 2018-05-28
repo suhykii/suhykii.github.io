@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RedMoon</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/myicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/main">홈</a></li>
+								<li><a href="/food">식음료</a>
+								<li><a href="/living">리빙</a>
+								<li><a href="/fashion">패션 & 뷰티</a></li>
+								<li><a href="/gita">기타</a></li>
+								<% if user_signed_in? %>
+							    <li><a href="/users/sign_out">[로그아웃]</a><li>
+							    <% else %>
+								<li><a href="/users/sign_in">[로그인]</a></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+					<!--<div class="col-sm-6">-->
+					<!--	<div class="social-icons pull-right">-->
+					<!--		<ul class="nav navbar-nav">-->
+					<!--			<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+					<!--		</ul>-->
+					<!--	</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/main"><img src="images/REDMOON.png" weigh></a>
+						</div>
+							
+					</div>
+				
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/main" >홈</a></li>
+								<li><a href="/food">식음료<!--<i class="fa fa-angle-down"></i> --></a>
+                            
+								<li><a href="/living">리빙<!-- <i class="fa fa-angle-down"></i> --></a>
+ 
+								<li><a href="/fashion" class="active">패션 & 뷰티</a></li>
+								<li><a href="/gita">기타</a></li>
+								
+							</ul>
+						</div>
+						
+					</div>
+						<div class="upload">
+					<% if user_signed_in? %>
+					<a href="/write">제품 등록</a>
+					<% else %>
+					<a href="/users/sign_in">로그인 후 제품 등록</a>
+					<% end %>
+					
+					</div><br><br>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header>
+	
+	
+<section>
+<div id="productlist">
+<div class="container">
+
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">제품 목록</h2>
+
+	<div class="productinfo2 text-center">
+		<% @posts.each do |x| %>
+			<div class="col-sm-4","col-xs-4">
+			<div class="product-image-wrapper">
+					<div class="single-products">
+						<div class="productinfo text-center">
+							<img src="<%= x.image.url %>">
+							<h3> <%= x.db_title %><br> </h3>
+							<p><%= x.pprice %>원<br><br></p>
+		
+<button type="button" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#myModal">
+  MORE
+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">제품 상세 설명</h4>
+      </div>
+      <div class="modal-body">
+        	<% @posts.each do |x| %>
+        	<td><%= x.user.email %></td><br><br>
+        	<h3> <%= x.db_title %><br> </h3>
+        	<p> <%= x.db_content %></p><br>
+        	<img src ="<%= x.image.url %>"><br>
+        	<%end%><br><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		<%end%>
+	</div>
+
+</div>
+</div>
+</div>
+</section>
+	
+			
+
+		<footer>
+		<div class="footer-bottom">
+			<div class="container">
+				
+			<!--번호/페이스북아이콘 소스 아래부터-->
+		<div class="footer_add"><!--footer_add-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> KAKAOTALK </a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> doo_lee_3@likelion.org</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+				
+				
+				<div class="row">
+					<p class="pull-left">Copyright © 2018 멋쟁이사자처럼6기 All rights reserved.</p>
+					<p class="pull-right">Designed by <a href = "https://likelion.net/"> <span>멋쟁이사자처럼건국대 <img src="images/likelionkku.png"></a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
